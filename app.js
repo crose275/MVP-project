@@ -21,29 +21,9 @@ $(submit).click(function(){
     console.log(typeof $('#date-due').val())
     console.log(typeof Number($('#category-choice').val()))
     console.log(`${month}-${day}-${year}`)
-   fetch('https://mvp-server-h3od.onrender.com/tasks', {
-    method: 'post',
-    body: {
-            "name": $('#task-name').val(),
-            "date_added": `${month}-${day}-${year}`,
-            "date_due": $('#due-date').val(),
-            "category_id": Number($('#category-choice').val()),
-            "completed": false
-    },
-    headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': '{rnd_cQxMhKPs1jhBpldKCWKfiGTZa6xl}'
-    }
-   }).then((response)=>{
-        console.log(response)
-   }).then((res) => {
-    if (res.status === 201) {
-        console.log("Post successfully created!")
-    }
-}).catch((error) => {
-    console.log(error)
-})
+    $.get('https://mvp-server-h3od.onrender.com/tasks', (data)=>{
+        console.log(data)
+    })
 
 })
 
