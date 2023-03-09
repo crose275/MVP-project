@@ -32,7 +32,8 @@ $(submit).click(function(){
     },
     headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer {rnd_cQxMhKPs1jhBpldKCWKfiGTZa6xl}'
     }
    }).then((response)=>{
         console.log(response)
